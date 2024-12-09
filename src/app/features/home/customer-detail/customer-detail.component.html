@@ -1,0 +1,90 @@
+@if(customer()) {
+<div>
+  <label for="id">Id</label>
+  <input
+    id="id"
+    name="id"
+    type="text"
+    readonly
+    class="w-25"
+    [(ngModel)]="customer()!.id"
+  />
+</div>
+
+<div class="mt-2">
+  <label for="firstName">First Name</label>
+  <input
+    id="firstName"
+    name="firstName"
+    type="text"
+    class="w-25"
+    [(ngModel)]="customer()!.firstName"
+  />
+</div>
+
+<div class="mt-2">
+  <label for="lastName">Last Name</label>
+  <input
+    id="lastName"
+    name="lastName"
+    type="text"
+    class="w-25"
+    [(ngModel)]="customer()!.lastName"
+  />
+</div>
+
+<div class="mt-2">
+  <label for="address1">Address 1</label>
+  <input
+    id="address1"
+    name="address1"
+    type="text"
+    class="w-25"
+    [(ngModel)]="customer()!.address1"
+  />
+</div>
+
+<div class="mt-2">
+  <label for="address2">Address 2</label>
+  <input
+    id="address2"
+    name="address2"
+    type="text"
+    class="w-25"
+    [(ngModel)]="customer()!.address2"
+  />
+</div>
+
+<div class="mt-2">
+  <label for="city">City</label>
+  <input
+    id="city"
+    name="city"
+    type="text"
+    class="w-25"
+    [(ngModel)]="customer()!.city"
+  />
+</div>
+
+<div class="mt-2">
+  <label for="state">State</label>
+  <input
+    id="state"
+    name="state"
+    type="text"
+    class="w-25"
+    [(ngModel)]="customer()!.state"
+  />
+</div>
+
+<div class="mt-2">
+  <label for="zipCode">Zip Code</label>
+  <input
+    id="zipCode"
+    name="zipCode"
+    type="text"
+    class="w-25"
+    [(ngModel)]="customer()!.zipCode"
+  />
+</div>
+}

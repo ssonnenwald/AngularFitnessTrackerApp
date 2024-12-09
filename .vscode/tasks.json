@@ -6,8 +6,18 @@
       "type": "npm",
       "script": "start",
       "isBackground": true,
+      "presentation": {
+        "focus": true,
+        "panel": "dedicated"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
       "problemMatcher": {
         "owner": "typescript",
+        "source": "ts",
+        "applyTo": "closedDocuments",
         "pattern": "$tsc",
         "background": {
           "activeOnStart": true,
@@ -37,6 +47,19 @@
           }
         }
       }
+    },
+    {
+      "label": "stop server",
+      "command": "echo ${input:terminate}",
+      "type": "shell"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "terminate",
+      "type": "command",
+      "command": "workbench.action.tasks.terminate",
+      "args": "npm: start"
     }
   ]
 }
