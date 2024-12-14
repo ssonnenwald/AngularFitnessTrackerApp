@@ -1,38 +1,36 @@
 import { Routes } from '@angular/router';
+import { AppLayoutComponent } from './features/app-layout/app-layout.component';
+import { LoginComponent } from './features/login/login.component';
 
 export const routes: Routes = [
+  { path: '', redirectTo: 'login', pathMatch: 'full' }, // Default route redirects to login
+  { path: 'login', component: LoginComponent }, // Login page
   {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: 'home',
+    path: '', // Parent route for authenticated sections
+    component: AppLayoutComponent,
+    children: [
+      {
+        path: 'dashboard',
+        loadComponent: () =>
+          import('./features/dashboard/dashboard.component').then(
+            (m) => m.DashboardComponent
+          ),
+      }, // Lazy-loaded dashboard
+      {
+        path: 'calendar',
+        loadComponent: () =>
+          import('./features/calendar/calendar.component').then(
+            (m) => m.CalendarComponent
+          ),
+      }, // Lazy-loaded calendar
+      {
+        path: 'goals',
+        loadComponent: () =>
+          import('./features/goals/goals.component').then(
+            (m) => m.GoalsComponent
+          ),
+      }, // Lazy-loaded goals
+    ],
   },
-  {
-    path: 'home',
-    loadComponent: () =>
-      import('./features/home/home.component').then((m) => m.HomeComponent),
-  },
-  {
-    path: 'profile',
-    loadComponent: () =>
-      import('./features/profile/profile.component').then(
-        (m) => m.ProfileComponent
-      ),
-  },
-  {
-    path: 'about',
-    loadComponent: () =>
-      import('./features/about/about.component').then((m) => m.AboutComponent),
-  },
-  {
-    path: 'help',
-    loadComponent: () =>
-      import('./features/help/help.component').then((m) => m.HelpComponent),
-  },
-  {
-    path: '**',
-    loadComponent: () =>
-      import('./features/not-found/not-found.component').then(
-        (m) => m.NotFoundComponent
-      ),
-  },
+  { path: '**', redirectTo: 'login' }, // Redirect unmatched routes to login
 ];

@@ -1,0 +1,22 @@
+.login-card {
+    width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.links {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+mat-form-field {
+    margin-bottom: 15px;
+}
