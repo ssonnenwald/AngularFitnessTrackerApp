@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-goals',
   imports: [],
   templateUrl: './goals.component.html',
-  styleUrl: './goals.component.css'
+  styleUrl: './goals.component.scss',
 })
-export class GoalsComponent {
-
-}
+export class GoalsComponent {}

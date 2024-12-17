@@ -18,7 +18,7 @@ import { Router } from '@angular/router';
     MatError,
   ],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css',
+  styleUrl: './login.component.scss',
 })
 export class LoginComponent {
   private authService: AuthService = inject(AuthService);

@@ -29,7 +29,7 @@ export class AuthService {
 
     localStorage.removeItem('token');
 
-    this.router.navigate(['/login']);
+    this.router.navigate(['login']);
   }
 
   public isLoggedIn(): boolean {
