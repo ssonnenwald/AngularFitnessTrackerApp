@@ -5,6 +5,9 @@ import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { loggingInterceptor } from './core/interceptors/logging.interceptor';
+import { provideNativeDateAdapter } from '@angular/material/core';
+
+import * as PlotlyJS from 'plotly.js-dist-min';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -12,5 +15,6 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideAnimationsAsync(),
     provideHttpClient(withInterceptors([loggingInterceptor])),
+    provideNativeDateAdapter(),
   ],
 };

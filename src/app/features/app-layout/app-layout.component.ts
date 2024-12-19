@@ -50,6 +50,8 @@ export class AppLayoutComponent implements AfterViewInit {
     { label: 'Dashboard', route: '/dashboard' },
     { label: 'Calendar', route: '/calendar' },
     { label: 'Goals', route: '/goals' },
+    { label: 'Reports', route: '/reports' },
+    { label: 'Profile', route: '/profile' },
   ];
 
   public constructor() {}

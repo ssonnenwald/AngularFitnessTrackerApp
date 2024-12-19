@@ -1,1 +1,15 @@
-<p>calendar works!</p>
+<mat-toolbar color="primary" class="header-title">Calendar</mat-toolbar>
+<div class="calendar-container">
+  <mat-card>
+    <mat-calendar [(selected)]="selectedDate"></mat-calendar>
+  </mat-card>
+  <mat-card>
+    <h3>Events for {{ selectedDate | date }}</h3>
+    <mat-list>
+      <mat-list-item>Workout: Yoga</mat-list-item>
+      <mat-list-item>Meal: Chicken Salad</mat-list-item>
+      <mat-list-item>Health Checkup: 2 PM</mat-list-item>
+    </mat-list>
+  </mat-card>
+  <button mat-fab color="primary" class="add-event-button">+</button>
+</div>

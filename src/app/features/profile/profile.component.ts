@@ -1,18 +1,20 @@
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 @Component({
-  selector: 'app-goals',
+  selector: 'app-profile',
   imports: [
     MatToolbarModule,
     MatCardModule,
-    MatProgressBarModule,
+    MatFormFieldModule,
+    MatInputModule,
     MatButtonModule,
   ],
-  templateUrl: './goals.component.html',
-  styleUrl: './goals.component.scss',
+  templateUrl: './profile.component.html',
+  styleUrl: './profile.component.scss',
 })
-export class GoalsComponent {}
+export class ProfileComponent {}
