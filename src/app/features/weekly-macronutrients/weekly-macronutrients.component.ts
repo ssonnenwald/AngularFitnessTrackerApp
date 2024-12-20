@@ -1,6 +1,14 @@
-import { Component } from '@angular/core';
-import * as PlotlyJS from 'plotly.js-dist-min';
-import { PlotlyModule } from 'angular-plotly.js';
+import {
+  AfterViewInit,
+  Component,
+  DestroyRef,
+  inject,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
+import { PlotlyModule, PlotlyService } from 'angular-plotly.js';
+import { SideMenuService } from '../../core/services/side-menu/side-menu.service';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-weekly-macronutrients',
@@ -8,54 +16,79 @@ import { PlotlyModule } from 'angular-plotly.js';
   templateUrl: './weekly-macronutrients.component.html',
   styleUrl: './weekly-macronutrients.component.scss',
 })
-export class WeeklyMacronutrientsComponent {
-  public graph: any = {
-    data: [
-      {
-        name: 'Protein',
-        x: ['Mon', 'Tues', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-        y: [200, 190, 240, 190, 220, 200, 210],
-        type: 'bar',
-        marker: {
-          color: '#03D7BC',
-        },
-      },
-      {
-        name: 'Carbs',
-        x: ['Mon', 'Tues', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-        y: [100, 123, 150, 130, 125, 150, 102],
-        type: 'bar',
-        marker: {
-          color: '#41C2EF',
-        },
-      },
-      {
-        name: 'Fat',
-        x: ['Mon', 'Tues', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-        y: [40, 50, 70, 45, 50, 30, 45],
-        type: 'bar',
-        marker: {
-          color: '#FF4E66',
-        },
-      },
-    ] as Plotly.Data[],
-    layout: {
-      autosize: true,
-      responsive: true,
-      useResizeHandler: true,
-      //width: 540,
-      height: 300,
-      barmode: 'stack',
-      xaxis: {
-        title: 'Days',
-      },
-      yaxis: {
-        title: 'Macronutrients (grams) ',
-        showticklabels: false,
-      },
-    } as Partial<Plotly.Layout>,
-    config: { responsive: true, displayModeBar: false },
-  };
+export class WeeklyMacronutrientsComponent implements OnInit, AfterViewInit {
+  @ViewChild('plotWeeklyMacronutrients', { static: false })
+  public plotWeeklyMacronutrients!: any;
+
+  private destroyRef: DestroyRef = inject(DestroyRef);
+  private sideMenuService: SideMenuService = inject(SideMenuService);
+  private plotlyService: PlotlyService = inject(PlotlyService);
+
+  public graph: any = undefined;
 
   public constructor() {}
+
+  public ngOnInit(): void {
+    this.sideMenuService.toggleState$
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(() => this.resizePlot());
+  }
+
+  public ngAfterViewInit(): void {
+    this.renderGraph();
+  }
+
+  private resizePlot(): void {
+    if (this.plotWeeklyMacronutrients) {
+      this.plotlyService.resize(this.plotWeeklyMacronutrients.plotlyInstance);
+    }
+  }
+
+  private renderGraph(): void {
+    setTimeout(() => {
+      this.graph = {
+        data: [
+          {
+            name: 'Protein',
+            x: ['Mon', 'Tues', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            y: [200, 190, 240, 190, 220, 200, 210],
+            type: 'bar',
+            marker: {
+              color: '#03D7BC',
+            },
+          },
+          {
+            name: 'Carbs',
+            x: ['Mon', 'Tues', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            y: [100, 123, 150, 130, 125, 150, 102],
+            type: 'bar',
+            marker: {
+              color: '#41C2EF',
+            },
+          },
+          {
+            name: 'Fat',
+            x: ['Mon', 'Tues', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            y: [40, 50, 70, 45, 50, 30, 45],
+            type: 'bar',
+            marker: {
+              color: '#FF4E66',
+            },
+          },
+        ] as Plotly.Data[],
+        layout: {
+          autosize: true,
+          barmode: 'stack',
+          xaxis: {
+            title: 'Days',
+          },
+          yaxis: {
+            title: 'Macronutrients (grams) ',
+            showticklabels: false,
+          },
+        } as Partial<Plotly.Layout>,
+        config: { responsive: true, displayModeBar: false },
+      };
+    });
+  }
 }

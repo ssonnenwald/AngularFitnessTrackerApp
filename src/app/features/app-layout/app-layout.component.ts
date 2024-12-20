@@ -23,6 +23,7 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 import { delay, filter } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MatIconModule } from '@angular/material/icon';
+import { SideMenuService } from '../../core/services/side-menu/side-menu.service';
 
 @Component({
   selector: 'app-app-layout',
@@ -31,7 +32,10 @@ import { MatIconModule } from '@angular/material/icon';
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
+    MatListItem,
     RouterModule,
+    RouterLink,
+    RouterLinkActive,
     RouterOutlet,
     MatIconModule,
   ],
@@ -41,6 +45,7 @@ import { MatIconModule } from '@angular/material/icon';
 export class AppLayoutComponent implements AfterViewInit {
   @ViewChild(MatSidenav) public sidenav!: MatSidenav;
 
+  private sideMenuService: SideMenuService = inject(SideMenuService);
   private destroyRef: DestroyRef = inject(DestroyRef);
   private authService: AuthService = inject(AuthService);
   private router: Router = inject(Router);
@@ -84,5 +89,9 @@ export class AppLayoutComponent implements AfterViewInit {
 
   public onLogout(): void {
     this.authService.logout();
+  }
+
+  public onToggle(isOpen: boolean): void {
+    this.sideMenuService.emitToggleState(isOpen);
   }
 }

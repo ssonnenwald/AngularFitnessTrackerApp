@@ -1,6 +1,11 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
+import * as PlotlyJS from 'plotly.js-dist-min';
+import { PlotlyModule } from 'angular-plotly.js';
 
-bootstrapApplication(AppComponent, appConfig)
-  .catch((err) => console.error(err));
+PlotlyModule.plotlyjs = PlotlyJS;
+
+bootstrapApplication(AppComponent, appConfig).catch((err) =>
+  console.error(err)
+);

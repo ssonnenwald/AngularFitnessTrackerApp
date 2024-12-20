@@ -8,7 +8,12 @@
 </mat-toolbar>
 
 <mat-sidenav-container>
-  <mat-sidenav #sidenav="matSidenav" mode="side" class="shadow">
+  <mat-sidenav
+    #sidenav="matSidenav"
+    mode="side"
+    class="shadow"
+    (openedChange)="onToggle($event)"
+  >
     <mat-nav-list>
       @for (link of navLinks; track link) {
       <a

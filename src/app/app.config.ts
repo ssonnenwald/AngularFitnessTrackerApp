@@ -7,8 +7,6 @@ import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { loggingInterceptor } from './core/interceptors/logging.interceptor';
 import { provideNativeDateAdapter } from '@angular/material/core';
 
-import * as PlotlyJS from 'plotly.js-dist-min';
-
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
