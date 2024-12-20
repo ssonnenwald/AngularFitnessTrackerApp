@@ -87,7 +87,10 @@ export class WeeklyMacronutrientsComponent implements OnInit, AfterViewInit {
             showticklabels: false,
           },
         } as Partial<Plotly.Layout>,
-        config: { responsive: true, displayModeBar: false },
+        config: {
+          responsive: true,
+          displayModeBar: false,
+        } as Partial<Plotly.Config>,
       };
     });
   }

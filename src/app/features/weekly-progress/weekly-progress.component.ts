@@ -37,7 +37,7 @@ export class WeeklyProgressComponent implements AfterViewInit {
     this.renderGraph();
   }
 
-  public resizePlot(): void {
+  private resizePlot(): void {
     if (this.plotWeeklyProgress) {
       this.plotlyService.resize(this.plotWeeklyProgress.plotlyInstance);
     }
@@ -65,7 +65,10 @@ export class WeeklyProgressComponent implements AfterViewInit {
             title: 'Steps',
           },
         } as Partial<Plotly.Layout>,
-        config: { responsive: true, displayModeBar: false },
+        config: {
+          responsive: true,
+          displayModeBar: false,
+        } as Partial<Plotly.Config>,
       };
     });
   }
