@@ -1,72 +1,94 @@
 .calendar-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    padding: 2rem;
-  
-    mat-toolbar {
-      width: 100%;
-      font-size: 1.5rem;
-      font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  //align-items: center;
+  //gap: 2rem;
+  padding: 2rem;
+
+  mat-toolbar {
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    justify-content: center;
+    color: #ffffff;
+  }
+
+  mat-card {
+    width: 100%;
+    //max-width: 700px;
+    padding: 1.5rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #ffffff;
+
+    &:first-of-type {
+      margin-bottom: 1rem;
+      display: flex;
       justify-content: center;
-      color: #ffffff;
-    }
-  
-    mat-card {
-      width: 100%;
-      max-width: 700px;
-      padding: 1.5rem;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-      background-color: #ffffff;
-  
-      &:first-of-type {
-        margin-bottom: 1rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-  
-        mat-calendar {
-          width: 100%;
-          max-width: 500px;
-        }
-      }
-  
-      h3 {
-        font-size: 1.2rem;
-        font-weight: bold;
-        color: #424242;
-        margin-bottom: 1rem;
-      }
-  
-      mat-list {
-        padding: 0;
-  
-        mat-list-item {
-          font-size: 1rem;
-          color: #616161;
-          border-bottom: 1px solid #e0e0e0;
-  
-          &:last-child {
-            border-bottom: none;
-          }
-        }
+      align-items: center;
+
+      mat-calendar {
+        width: 100%;
+        max-width: 500px;
       }
     }
-  
-    .add-event-button {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      background-color: #1976d2;
-      color: #ffffff;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-      font-size: 1.5rem;
-  
-      &:hover {
-        background-color: #1565c0;
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #424242;
+      margin-bottom: 1rem;
+    }
+
+    mat-icon {
+      margin-right: 8px;
+      vertical-align: text-bottom;
+      width: 24px; /* Set a fixed width */
+      height: 24px; /* Set a fixed height */
+      font-size: 24px; /* Consistent icon size */
+      line-height: 24px; /* Align content vertically */
+      display: inline-block; /* Prevent unnecessary resizing */
+    }
+
+    .delete-icon {
+      color: #f44336;
+    }
+
+    .delete-button {
+      margin-right: 12px;
+    }
+
+    mat-list {
+      padding: 0;
+
+      mat-list-item {
+        font-size: 1rem;
+        color: #616161;
+        border-bottom: 1px solid #e0e0e0;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+
+      .calendar-events {
+        width: 100%;
+        height: 100px;
       }
     }
   }
-  
+
+  .add-event-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: #1976d2;
+    color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 1.5rem;
+
+    &:hover {
+      background-color: #1565c0;
+    }
+  }
+}

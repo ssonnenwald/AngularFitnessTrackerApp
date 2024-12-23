@@ -1,80 +1,85 @@
 mat-toolbar {
-    position: sticky;
-    top: 0;
-    z-index: 2;    
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 
 .mat-toolbar-row,
 .mat-toolbar-single-row {
-    padding: 0 8px;
+  padding: 0 8px;
 }
 
 mat-icon {
-    margin-right: 8px;
-    color: #ffffff;
+  margin-right: 8px;
+  color: #ffffff;
+  width: 24px; /* Set a fixed width */
+  height: 24px; /* Set a fixed height */
+  font-size: 24px; /* Consistent icon size */
+  line-height: 24px; /* Align content vertically */
+  display: inline-block; /* Prevent unnecessary resizing */
 }
 
 .spacer {
-    flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
 mat-sidenav-container {
-    height: calc(100vh - 65px);
+  height: calc(100vh - 65px);
 }
 
 mat-sidenav {
-    margin-top: 16px;
-    margin-right: 0px;
-    margin-bottom: 16px;
-    margin-left: 16px;
-    width: 200px;
-    border-right: none;        
-    border-radius: 10px;
-    padding: 16px;
-    text-align: center;
+  margin-top: 16px;
+  margin-right: 0px;
+  margin-bottom: 16px;
+  margin-left: 16px;
+  width: 200px;
+  border-right: none;
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
 }
 
 .sidenav-closed {
-    padding-left: 16px;
+  padding-left: 16px;
 }
 
 .sidenav-open {
-    padding-left: 32px;
+  padding-left: 32px;
 }
 
 .content {
-    height: calc(100vh - 98px);
-    border-radius: 10px;
-    margin-top: 16px;
-    margin-right: 16px;
-    margin-bottom: 16px;
+  height: calc(100vh - 98px);
+  border-radius: 10px;
+  margin-top: 16px;
+  margin-right: 16px;
+  margin-bottom: 16px;
 
-    padding: 16px;
+  padding: 16px;
 
-    overflow: auto;
+  overflow: auto;
 }
 
 .shadow {
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2) !important;
 }
 
 .menu-button {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    font-size: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1rem;
 }
 
 .menu-text {
-    color: #ffffff !important;
+  color: #ffffff !important;
 }
 
 .active {
-    background-color: #ffffff;    
+  background-color: #ffffff;
 }
 
-.active .menu-text {    
-    font-weight: bold;
-    color: #004a9f !important;
+.active .menu-text {
+  font-weight: bold;
+  color: #004a9f !important;
 }

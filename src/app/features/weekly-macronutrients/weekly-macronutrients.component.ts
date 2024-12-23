@@ -1,5 +1,4 @@
 import {
-  AfterViewInit,
   Component,
   DestroyRef,
   inject,
@@ -16,7 +15,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   templateUrl: './weekly-macronutrients.component.html',
   styleUrl: './weekly-macronutrients.component.scss',
 })
-export class WeeklyMacronutrientsComponent implements OnInit, AfterViewInit {
+export class WeeklyMacronutrientsComponent implements OnInit {
   @ViewChild('plotWeeklyMacronutrients', { static: false })
   public plotWeeklyMacronutrients!: any;
 
@@ -29,13 +28,11 @@ export class WeeklyMacronutrientsComponent implements OnInit, AfterViewInit {
   public constructor() {}
 
   public ngOnInit(): void {
+    this.renderGraph();
+
     this.sideMenuService.toggleState$
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(() => this.resizePlot());
-  }
-
-  public ngAfterViewInit(): void {
-    this.renderGraph();
   }
 
   private resizePlot(): void {
@@ -45,53 +42,51 @@ export class WeeklyMacronutrientsComponent implements OnInit, AfterViewInit {
   }
 
   private renderGraph(): void {
-    setTimeout(() => {
-      this.graph = {
-        data: [
-          {
-            name: 'Protein',
-            x: ['Mon', 'Tues', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-            y: [200, 190, 240, 190, 220, 200, 210],
-            type: 'bar',
-            marker: {
-              color: '#03D7BC',
-            },
+    this.graph = {
+      data: [
+        {
+          name: 'Protein',
+          x: ['Mon', 'Tues', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+          y: [200, 190, 240, 190, 220, 200, 210],
+          type: 'bar',
+          marker: {
+            color: '#03D7BC',
           },
-          {
-            name: 'Carbs',
-            x: ['Mon', 'Tues', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-            y: [100, 123, 150, 130, 125, 150, 102],
-            type: 'bar',
-            marker: {
-              color: '#41C2EF',
-            },
+        },
+        {
+          name: 'Carbs',
+          x: ['Mon', 'Tues', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+          y: [100, 123, 150, 130, 125, 150, 102],
+          type: 'bar',
+          marker: {
+            color: '#41C2EF',
           },
-          {
-            name: 'Fat',
-            x: ['Mon', 'Tues', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-            y: [40, 50, 70, 45, 50, 30, 45],
-            type: 'bar',
-            marker: {
-              color: '#FF4E66',
-            },
+        },
+        {
+          name: 'Fat',
+          x: ['Mon', 'Tues', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+          y: [40, 50, 70, 45, 50, 30, 45],
+          type: 'bar',
+          marker: {
+            color: '#FF4E66',
           },
-        ] as Plotly.Data[],
-        layout: {
-          autosize: true,
-          barmode: 'stack',
-          xaxis: {
-            title: 'Days',
-          },
-          yaxis: {
-            title: 'Macronutrients (grams) ',
-            showticklabels: false,
-          },
-        } as Partial<Plotly.Layout>,
-        config: {
-          responsive: true,
-          displayModeBar: false,
-        } as Partial<Plotly.Config>,
-      };
-    });
+        },
+      ] as Plotly.Data[],
+      layout: {
+        autosize: true,
+        barmode: 'stack',
+        xaxis: {
+          title: 'Days',
+        },
+        yaxis: {
+          title: 'Macronutrients (grams) ',
+          showticklabels: false,
+        },
+      } as Partial<Plotly.Layout>,
+      config: {
+        responsive: true,
+        displayModeBar: false,
+      } as Partial<Plotly.Config>,
+    };
   }
 }

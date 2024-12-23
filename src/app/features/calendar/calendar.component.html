@@ -1,15 +1,42 @@
 <mat-toolbar color="primary" class="header-title">Calendar</mat-toolbar>
 <div class="calendar-container">
-  <mat-card>
-    <mat-calendar [(selected)]="selectedDate"></mat-calendar>
-  </mat-card>
-  <mat-card>
-    <h3>Events for {{ selectedDate | date }}</h3>
-    <mat-list>
-      <mat-list-item>Workout: Yoga</mat-list-item>
-      <mat-list-item>Meal: Chicken Salad</mat-list-item>
-      <mat-list-item>Health Checkup: 2 PM</mat-list-item>
-    </mat-list>
-  </mat-card>
+  <div class="d-flex flex-row h-100 gap-4 flex-wrap">
+    <div class="d-flex flex-column flex-grow-1 h-100">
+      <mat-card>
+        <mat-calendar [(selected)]="selectedDate"></mat-calendar>
+      </mat-card>
+    </div>
+    <div class="d-flex flex-column flex-grow-1 h-100">
+      <mat-card>
+        <div>
+          <h3>Events for {{ selectedDate | date }}</h3>
+          <mat-list>
+            <mat-list-item
+              ><button mat-icon-button>
+                <mat-icon fontIcon="edit" /></button
+              ><button mat-icon-button class="delete-button">
+                <mat-icon fontIcon="delete" class="delete-icon" /></button
+              >Workout: Yoga</mat-list-item
+            >
+            <mat-list-item
+              ><button mat-icon-button>
+                <mat-icon fontIcon="edit" /></button
+              ><button mat-icon-button class="delete-button">
+                <mat-icon fontIcon="delete" class="delete-icon" /></button
+              >Meal: Chicken Salad</mat-list-item
+            >
+            <mat-list-item
+              ><button mat-icon-button>
+                <mat-icon fontIcon="edit" /></button
+              ><button mat-icon-button class="delete-button">
+                <mat-icon fontIcon="delete" class="delete-icon" /></button
+              >Health Checkup: 2 PM</mat-list-item
+            >
+          </mat-list>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+
   <button mat-fab color="primary" class="add-event-button">+</button>
 </div>
