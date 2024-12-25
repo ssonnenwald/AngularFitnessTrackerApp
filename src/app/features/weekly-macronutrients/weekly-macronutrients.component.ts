@@ -3,7 +3,9 @@ import {
   DestroyRef,
   inject,
   OnInit,
+  signal,
   ViewChild,
+  WritableSignal,
 } from '@angular/core';
 import { PlotlyModule, PlotlyService } from 'angular-plotly.js';
 import { SideMenuService } from '../../core/services/side-menu/side-menu.service';
@@ -23,7 +25,7 @@ export class WeeklyMacronutrientsComponent implements OnInit {
   private sideMenuService: SideMenuService = inject(SideMenuService);
   private plotlyService: PlotlyService = inject(PlotlyService);
 
-  public graph: any = undefined;
+  public graph: WritableSignal<any> = signal<any>(undefined);
 
   public constructor() {}
 
@@ -42,7 +44,7 @@ export class WeeklyMacronutrientsComponent implements OnInit {
   }
 
   private renderGraph(): void {
-    this.graph = {
+    this.graph.set({
       data: [
         {
           name: 'Protein',
@@ -87,6 +89,6 @@ export class WeeklyMacronutrientsComponent implements OnInit {
         responsive: true,
         displayModeBar: false,
       } as Partial<Plotly.Config>,
-    };
+    });
   }
 }

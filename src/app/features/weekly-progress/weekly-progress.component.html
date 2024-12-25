@@ -1,9 +1,9 @@
-@if(graph) {
+@if(graph()) {
 <plotly-plot
   #plotWeeklyProgress
-  [data]="graph.data"
-  [layout]="graph.layout"
-  [config]="graph.config"
+  [data]="graph().data"
+  [layout]="graph().layout"
+  [config]="graph().config"
   [useResizeHandler]="true"
   [style]="{
     position: 'relative',
