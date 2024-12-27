@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ActivityReportChartComponent } from './activity-report-chart.component';
+import { ActivityReportsComponent } from './activity-reports.component';
 
 describe('ActivityReportChartComponent', () => {
-  let component: ActivityReportChartComponent;
-  let fixture: ComponentFixture<ActivityReportChartComponent>;
+  let component: ActivityReportsComponent;
+  let fixture: ComponentFixture<ActivityReportsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ActivityReportChartComponent]
-    })
-    .compileComponents();
+      imports: [ActivityReportsComponent],
+    }).compileComponents();
 
-    fixture = TestBed.createComponent(ActivityReportChartComponent);
+    fixture = TestBed.createComponent(ActivityReportsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

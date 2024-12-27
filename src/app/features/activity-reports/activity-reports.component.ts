@@ -4,12 +4,12 @@ import { StepsChartComponent } from '../steps-chart/steps-chart.component';
 import { ActivityChartComponent } from '../activity-chart/activity-chart.component';
 
 @Component({
-  selector: 'app-activity-report-chart',
+  selector: 'app-activity-reports',
   imports: [MatButtonToggleModule, StepsChartComponent, ActivityChartComponent],
-  templateUrl: './activity-report-chart.component.html',
-  styleUrl: './activity-report-chart.component.scss',
+  templateUrl: './activity-reports.component.html',
+  styleUrl: './activity-reports.component.scss',
 })
-export class ActivityReportChartComponent {
+export class ActivityReportsComponent {
   public currentChart: 'steps' | 'activity' = 'steps'; // Default chart
 
   public toggleChart(chartType: 'steps' | 'activity'): void {

@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { ActivityReportChartComponent } from '../activity-report-chart/activity-report-chart.component';
-import { NutritionReportChartComponent } from '../nutrition-report-chart/nutrition-report-chart.component';
-import { ProgressReportChartComponent } from '../progress-report-chart/progress-report-chart.component';
+import { ActivityReportsComponent } from '../activity-reports/activity-reports.component';
+import { NutritionReportsComponent } from '../nutrition-reports/nutrition-reports.component';
+import { ProgressReportsComponent } from '../progress-reports/progress-reports.component';
 
 @Component({
   selector: 'app-reports',
@@ -12,9 +12,9 @@ import { ProgressReportChartComponent } from '../progress-report-chart/progress-
     MatToolbarModule,
     MatTabsModule,
     MatButtonModule,
-    ActivityReportChartComponent,
-    NutritionReportChartComponent,
-    ProgressReportChartComponent,
+    ActivityReportsComponent,
+    NutritionReportsComponent,
+    ProgressReportsComponent,
   ],
   templateUrl: './reports.component.html',
   styleUrl: './reports.component.scss',

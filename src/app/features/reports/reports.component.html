@@ -4,21 +4,15 @@
     <mat-tab-group>
       <mat-tab label="Activity">
         <!-- A bar chart showing steps per day or a line chart for weekly activity trends. -->
-        <app-activity-report-chart
-          id="activity-chart"
-        ></app-activity-report-chart>
+        <app-activity-reports id="activity-reports"></app-activity-reports>
       </mat-tab>
       <mat-tab label="Nutrition">
         <!-- A pie chart for daily macronutrient ratios or a stacked bar chart for caloric intake by meals. -->
-        <app-nutrition-report-chart
-          id="nutrition-chart"
-        ></app-nutrition-report-chart>
+        <app-nutrition-reports id="nutrition-reports"></app-nutrition-reports>
       </mat-tab>
       <mat-tab label="Progress">
         <!-- A combination chart showing weight, BMI, or other tracked metrics over time. -->
-        <app-progress-report-chart
-          id="progress-chart"
-        ></app-progress-report-chart>
+        <app-progress-reports id="progress-reports"></app-progress-reports>
       </mat-tab>
     </mat-tab-group>
 

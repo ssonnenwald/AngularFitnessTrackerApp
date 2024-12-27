@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProgressReportChartComponent } from './progress-report-chart.component';
+import { ProgressReportsComponent } from './progress-reports.component';
 
 describe('ProgressReportChartComponent', () => {
-  let component: ProgressReportChartComponent;
-  let fixture: ComponentFixture<ProgressReportChartComponent>;
+  let component: ProgressReportsComponent;
+  let fixture: ComponentFixture<ProgressReportsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ProgressReportChartComponent]
-    })
-    .compileComponents();
+      imports: [ProgressReportsComponent],
+    }).compileComponents();
 
-    fixture = TestBed.createComponent(ProgressReportChartComponent);
+    fixture = TestBed.createComponent(ProgressReportsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

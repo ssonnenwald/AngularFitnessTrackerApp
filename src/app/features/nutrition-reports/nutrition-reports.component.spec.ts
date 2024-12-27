@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NutritionReportChartComponent } from './nutrition-report-chart.component';
+import { NutritionReportsComponent } from './nutrition-reports.component';
 
 describe('NutritionReportChartComponent', () => {
-  let component: NutritionReportChartComponent;
-  let fixture: ComponentFixture<NutritionReportChartComponent>;
+  let component: NutritionReportsComponent;
+  let fixture: ComponentFixture<NutritionReportsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NutritionReportChartComponent]
-    })
-    .compileComponents();
+      imports: [NutritionReportsComponent],
+    }).compileComponents();
 
-    fixture = TestBed.createComponent(NutritionReportChartComponent);
+    fixture = TestBed.createComponent(NutritionReportsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

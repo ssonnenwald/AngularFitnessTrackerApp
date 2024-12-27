@@ -12,12 +12,12 @@ import { SideMenuService } from '../../core/services/side-menu/side-menu.service
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
-  selector: 'app-weekly-macronutrients',
+  selector: 'app-macronutrients-chart',
   imports: [PlotlyModule],
-  templateUrl: './weekly-macronutrients.component.html',
-  styleUrl: './weekly-macronutrients.component.scss',
+  templateUrl: './macronutrients-chart.component.html',
+  styleUrl: './macronutrients-chart.component.scss',
 })
-export class WeeklyMacronutrientsComponent implements OnInit {
+export class MacronutrientsChartComponent implements OnInit {
   @ViewChild('plotWeeklyMacronutrients', { static: false })
   public plotWeeklyMacronutrients!: any;
 

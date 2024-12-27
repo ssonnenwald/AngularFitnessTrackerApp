@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WeeklyMacronutrientsComponent } from './weekly-macronutrients.component';
+import { MacronutrientsChartComponent } from './macronutrients-chart.component';
 
 describe('WeeklyMacronutrientsComponent', () => {
-  let component: WeeklyMacronutrientsComponent;
-  let fixture: ComponentFixture<WeeklyMacronutrientsComponent>;
+  let component: MacronutrientsChartComponent;
+  let fixture: ComponentFixture<MacronutrientsChartComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [WeeklyMacronutrientsComponent]
-    })
-    .compileComponents();
+      imports: [MacronutrientsChartComponent],
+    }).compileComponents();
 
-    fixture = TestBed.createComponent(WeeklyMacronutrientsComponent);
+    fixture = TestBed.createComponent(MacronutrientsChartComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
