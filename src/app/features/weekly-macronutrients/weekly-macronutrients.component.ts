@@ -75,6 +75,15 @@ export class WeeklyMacronutrientsComponent implements OnInit {
         },
       ] as Plotly.Data[],
       layout: {
+        title: {
+          text: 'Daily Macronutrients',
+          font: {
+            family: 'Roboto, "Helvetica Neue",sans-serif',
+            size: 19.2,
+            color: '#424242',
+            weight: 'bold',
+          },
+        },
         autosize: true,
         barmode: 'stack',
         xaxis: {
@@ -84,7 +93,7 @@ export class WeeklyMacronutrientsComponent implements OnInit {
           title: 'Macronutrients (grams) ',
           showticklabels: false,
         },
-      } as Partial<Plotly.Layout>,
+      },
       config: {
         responsive: true,
         displayModeBar: false,

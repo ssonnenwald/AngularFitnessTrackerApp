@@ -54,7 +54,15 @@ export class StepsChartComponent implements OnInit {
         },
       ] as Plotly.Data[],
       layout: {
-        title: 'Daily Steps',
+        title: {
+          text: 'Daily Steps',
+          font: {
+            family: 'Roboto, "Helvetica Neue",sans-serif',
+            size: 19.2,
+            color: '#424242',
+            weight: 'bold',
+          },
+        },
         autosize: true,
         xaxis: {
           title: 'Days',
@@ -62,7 +70,7 @@ export class StepsChartComponent implements OnInit {
         yaxis: {
           title: 'Steps',
         },
-      } as Partial<Plotly.Layout>,
+      },
       config: {
         responsive: true,
         displayModeBar: false,

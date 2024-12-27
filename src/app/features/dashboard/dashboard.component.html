@@ -26,15 +26,13 @@
     <p>240lbs</p>
   </mat-card>
   <mat-card class="chart-card">
-    <h3>Weekly Progress</h3>
     @defer (on timer(250ms)) {
-    <app-weekly-progress></app-weekly-progress>
+    <app-steps-chart></app-steps-chart>
     } @placeholder {
     <p>Chart loading...</p>
     }
   </mat-card>
   <mat-card class="chart-card">
-    <h3>Weekly Macronutrients</h3>
     @defer (on timer(250ms)) {
     <app-weekly-macronutrients></app-weekly-macronutrients>
     } @placeholder {
