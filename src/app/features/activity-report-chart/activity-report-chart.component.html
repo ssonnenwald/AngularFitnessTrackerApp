@@ -1,0 +1,20 @@
+@if(currentChart === 'steps'){
+<div class="chart-container">
+  <app-steps-chart></app-steps-chart>
+</div>
+} @if(currentChart === 'activity'){
+<div class="chart-container">
+  <app-activity-chart></app-activity-chart>
+</div>
+}
+
+<div class="chart-toggle-container">
+  <mat-button-toggle-group
+    value="{{ currentChart }}"
+    (change)="toggleChart($event.value)"
+    class="chart-toggle-group"
+  >
+    <mat-button-toggle value="steps">Steps Chart</mat-button-toggle>
+    <mat-button-toggle value="activity">Activity Chart</mat-button-toggle>
+  </mat-button-toggle-group>
+</div>

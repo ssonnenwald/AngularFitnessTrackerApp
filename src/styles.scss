@@ -43,3 +43,10 @@ body {
 .header-title {
   border-radius: 8px;
 }
+
+.mat-mdc-tab-body-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-grow: 1;
+}

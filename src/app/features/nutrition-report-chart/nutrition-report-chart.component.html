@@ -1,0 +1,22 @@
+<mat-button-toggle-group
+  value="{{ currentChart }}"
+  (change)="toggleChart($event.value)"
+  class="chart-toggle-group"
+>
+  <mat-button-toggle value="macronutrients"
+    >Macronutrients Chart</mat-button-toggle
+  >
+  <mat-button-toggle value="caloric intake"
+    >Daily Caloric Intake Chart</mat-button-toggle
+  >
+</mat-button-toggle-group>
+
+@if(currentChart === 'macronutrients'){
+<div class="chart-container">
+  <app-daily-macronutrient-chart></app-daily-macronutrient-chart>
+</div>
+} @if(currentChart === 'caloric intake'){
+<div class="chart-container">
+  <app-caloric-intake-by-meal-chart></app-caloric-intake-by-meal-chart>
+</div>
+}
