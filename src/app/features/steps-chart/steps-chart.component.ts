@@ -36,7 +36,10 @@ export class StepsChartComponent implements OnInit {
   }
 
   private resizePlot(): void {
-    if (this.stepsChart) {
+    if (
+      this.stepsChart &&
+      this.stepsChart.plotEl.nativeElement.checkVisibility()
+    ) {
       this.plotlyService.resize(this.stepsChart.plotlyInstance);
     }
   }
@@ -63,9 +66,10 @@ export class StepsChartComponent implements OnInit {
             weight: 'bold',
           },
         },
+        responsive: true,
         autosize: true,
         xaxis: {
-          title: 'Days',
+          title: 'Days of the Week',
         },
         yaxis: {
           title: 'Steps',

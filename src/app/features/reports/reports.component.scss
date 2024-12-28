@@ -11,7 +11,9 @@
     margin: 0px;
   }
 
-  #activity-reports {
+  #activity-reports,
+  #nutrition-reports,
+  #progress-reports {
     display: flex;
     flex-direction: column;
     height: 100%;

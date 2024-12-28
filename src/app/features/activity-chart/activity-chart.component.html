@@ -1,1 +1,14 @@
-<p>activity-chart works!</p>
+@if(graph()) {
+<plotly-plot
+  #activityChart
+  [data]="graph().data"
+  [layout]="graph().layout"
+  [config]="graph().config"
+  [useResizeHandler]="true"
+  [style]="{
+            position: 'relative',
+            width: '100%',
+            height: '100%',    
+          }"
+></plotly-plot>
+}

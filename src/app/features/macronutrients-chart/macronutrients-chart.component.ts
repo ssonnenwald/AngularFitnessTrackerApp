@@ -38,7 +38,10 @@ export class MacronutrientsChartComponent implements OnInit {
   }
 
   private resizePlot(): void {
-    if (this.plotWeeklyMacronutrients) {
+    if (
+      this.plotWeeklyMacronutrients &&
+      this.plotWeeklyMacronutrients.plotEl.nativeElement.checkVisibility()
+    ) {
       this.plotlyService.resize(this.plotWeeklyMacronutrients.plotlyInstance);
     }
   }
@@ -84,10 +87,11 @@ export class MacronutrientsChartComponent implements OnInit {
             weight: 'bold',
           },
         },
+        responsive: true,
         autosize: true,
         barmode: 'stack',
         xaxis: {
-          title: 'Days',
+          title: 'Days of the Week',
         },
         yaxis: {
           title: 'Macronutrients (grams) ',
