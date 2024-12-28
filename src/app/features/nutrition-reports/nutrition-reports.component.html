@@ -1,14 +1,22 @@
 @if(currentChart === 'macronutrients'){
 <div class="chart-container">
+  @defer (on timer(250ms)) {
   <app-macronutrients-chart
     class="macronutrients-chart"
   ></app-macronutrients-chart>
+  } @placeholder {
+  <p>Chart loading...</p>
+  }
 </div>
 } @if(currentChart === 'caloric intake'){
 <div class="chart-container">
+  @defer (on timer(250ms)) {
   <app-caloric-intake-by-meal-chart
     class="caloric-intake-by-meal-chart"
   ></app-caloric-intake-by-meal-chart>
+  } @placeholder {
+  <p>Chart loading...</p>
+  }
 </div>
 }
 

@@ -1,10 +1,18 @@
 @if(currentChart === 'steps'){
 <div class="chart-container">
+  @defer (on timer(250ms)) {
   <app-steps-chart class="steps-chart"></app-steps-chart>
+  } @placeholder {
+  <p>Chart loading...</p>
+  }
 </div>
 } @if(currentChart === 'activity'){
 <div class="chart-container">
+  @defer (on timer(250ms)) {
   <app-activity-chart class="activity-chart"></app-activity-chart>
+  } @placeholder {
+  <p>Chart loading...</p>
+  }
 </div>
 }
 
