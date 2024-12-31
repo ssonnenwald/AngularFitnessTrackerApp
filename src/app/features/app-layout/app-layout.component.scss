@@ -40,21 +40,24 @@ mat-sidenav {
 }
 
 .sidenav-closed {
-  padding-left: 16px;
+  margin-left: 0px !important;
 }
 
 .sidenav-open {
-  padding-left: 32px;
+  margin-left: 216px !important;
 }
 
 .content {
   height: calc(100vh - 98px);
   border-radius: 10px;
+
+  margin-left: 16px;
   margin-top: 16px;
   margin-right: 16px;
   margin-bottom: 16px;
 
   padding: 16px;
+  padding-left: 16px;
 
   overflow: auto;
 }
