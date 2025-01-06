@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
-import { WeightBmiChartComponent } from '../weight-bmi-chart/weight-bmi-chart.component';
+import { ChartType } from '../../shared/models/enums/chart-type';
+import { ChartComponent } from '../chart/chart.component';
 
 @Component({
   selector: 'app-progress-reports',
-  imports: [WeightBmiChartComponent],
+  imports: [ChartComponent],
   templateUrl: './progress-reports.component.html',
   styleUrl: './progress-reports.component.scss',
 })
-export class ProgressReportsComponent {}
+export class ProgressReportsComponent {
+  public ChartType = ChartType;
+}

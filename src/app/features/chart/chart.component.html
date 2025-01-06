@@ -1,9 +1,9 @@
-@if(graph()) {
+@if(chart()) {
 <plotly-plot
-  #caloricIntakeByMealChart
-  [data]="graph().data"
-  [layout]="graph().layout"
-  [config]="graph().config"
+  #chartRef
+  [data]="chart().data"
+  [layout]="chart().layout"
+  [config]="chart().config"
   [useResizeHandler]="true"
   [style]="{
             position: 'relative',

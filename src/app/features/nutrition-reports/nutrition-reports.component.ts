@@ -1,19 +1,16 @@
 import { Component } from '@angular/core';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
-import { CaloricIntakeByMealChartComponent } from '../caloric-intake-by-meal-chart/caloric-intake-by-meal-chart.component';
-import { MacronutrientsChartComponent } from '../macronutrients-chart/macronutrients-chart.component';
+import { ChartType } from '../../shared/models/enums/chart-type';
+import { ChartComponent } from '../chart/chart.component';
 
 @Component({
   selector: 'app-nutrition-reports',
-  imports: [
-    MatButtonToggleModule,
-    MacronutrientsChartComponent,
-    CaloricIntakeByMealChartComponent,
-  ],
+  imports: [MatButtonToggleModule, ChartComponent],
   templateUrl: './nutrition-reports.component.html',
   styleUrl: './nutrition-reports.component.scss',
 })
 export class NutritionReportsComponent {
+  public ChartType = ChartType;
   public currentChart: 'macronutrients' | 'caloric intake' = 'macronutrients'; // Default chart
 
   public toggleChart(chartType: 'macronutrients' | 'caloric intake'): void {

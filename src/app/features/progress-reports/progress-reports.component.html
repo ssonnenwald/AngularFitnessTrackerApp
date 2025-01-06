@@ -1,6 +1,9 @@
 <div class="chart-container">
   @defer (on timer(250ms)) {
-  <app-weight-bmi-chart class="weight-bmi-chart"></app-weight-bmi-chart>
+  <app-chart
+    class="weight-bmi-chart"
+    [chartType]="ChartType.WEIGHT_BMI"
+  ></app-chart>
   } @placeholder {
   <p>Chart loading...</p>
   }

@@ -27,14 +27,14 @@
   </mat-card>
   <mat-card class="chart-card">
     @defer (on timer(250ms)) {
-    <app-steps-chart></app-steps-chart>
+    <app-chart [chartType]="ChartType.STEPS"></app-chart>
     } @placeholder {
     <p>Chart loading...</p>
     }
   </mat-card>
   <mat-card class="chart-card">
     @defer (on timer(250ms)) {
-    <app-macronutrients-chart></app-macronutrients-chart>
+    <app-chart [chartType]="ChartType.MACRONUTRIENTS"></app-chart>
     } @placeholder {
     <p>Chart loading...</p>
     }
