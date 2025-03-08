@@ -26,7 +26,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { SideMenuService } from '../../core/services/side-menu/side-menu.service';
 
 @Component({
-  selector: 'app-app-layout',
+  selector: 'app-layout',
   imports: [
     MatButtonModule,
     MatToolbarModule,
