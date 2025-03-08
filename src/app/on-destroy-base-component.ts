@@ -2,7 +2,7 @@ import { Component, OnDestroy } from '@angular/core';
 import { Subject } from 'rxjs';
 
 @Component({
-  selector: 'e2g-on-destroy-base',
+  selector: 'on-destroy-base',
   template: '',
 })
 export class OnDestroyBaseComponent implements OnDestroy {
