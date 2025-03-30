@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/progress-reports/progress-reports.component.scss"],
+  "sourcesContent": [".chart-container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  flex-grow: 1;\r\n  padding: 16px;\r\n}\r\n\r\n.weight-bmi-chart {\r\n  width: 100%;\r\n  height: 100%;\r\n  overflow: hidden;\r\n}\r\n"],
+  "mappings": "AAAA,CAAA,gBACE,QAAA,KACA,eAAA,OACA,UAAA,EAHF,QAIE,KAGF,CAAA,iBACE,MAAA,KACA,OAAA,KACA,SAAA",
+  "names": []
+}

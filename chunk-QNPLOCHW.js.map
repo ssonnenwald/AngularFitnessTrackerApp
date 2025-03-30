@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/shared/models/enums/chart-type.ts"],
+  "sourcesContent": ["export enum ChartType {\r\n  ACTIVITY = 'activity-chart',\r\n  CALORIC_INTAKE_BY_MEAL = 'caloric-intake-by-meal-chart',\r\n  MACRONUTRIENTS = 'macronutrients-chart',\r\n  STEPS = 'steps-chart',\r\n  WEIGHT_BMI = 'weight-bmi-chart',\r\n}\r\n"],
+  "mappings": "AAAA,IAAYA,EAAZ,SAAYA,EAAS,CACnBA,OAAAA,EAAA,SAAA,iBACAA,EAAA,uBAAA,+BACAA,EAAA,eAAA,uBACAA,EAAA,MAAA,cACAA,EAAA,WAAA,mBALUA,CAMZ,EANYA,GAAS,CAAA,CAAA",
+  "names": ["ChartType"]
+}

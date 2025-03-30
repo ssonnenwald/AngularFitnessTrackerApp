@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/reports/reports.component.scss"],
+  "sourcesContent": [".reports-container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  padding-top: 2rem;\r\n  height: 100%;\r\n  width: 100%;\r\n\r\n  mat-tab-group {\r\n    width: 100%;\r\n    height: 100%;\r\n    margin: 0px;\r\n  }\r\n\r\n  #activity-reports,\r\n  #nutrition-reports,\r\n  #progress-reports {\r\n    display: flex;\r\n    flex-direction: column;\r\n    height: 100%;\r\n  }\r\n\r\n  button {\r\n    margin-top: 1.5rem;\r\n    min-width: 150px;\r\n    font-size: 1rem;\r\n    font-weight: bold;\r\n    align-self: flex-end;\r\n\r\n    &.mat-accent {\r\n      background-color: #ff4081;\r\n      color: #ffffff;\r\n\r\n      &:hover {\r\n        background-color: #e91e63;\r\n      }\r\n    }\r\n  }\r\n}\r\n"],
+  "mappings": "AAAA,CAAA,kBACE,QAAA,KACA,eAAA,OACA,YAAA,KACA,OAAA,KACA,MAAA,KAEA,CAPF,kBAOE,cACE,MAAA,KACA,OAAA,KATJ,OAUI,EAGF,CAbF,kBAaE,CAAA,iBAAA,CAbF,kBAaE,CAAA,kBAAA,CAbF,kBAaE,CAAA,iBAGE,QAAA,KACA,eAAA,OACA,OAAA,KAGF,CArBF,kBAqBE,OACE,WAAA,OACA,UAAA,MACA,UAAA,KACA,YAAA,IACA,WAAA,SAEA,CA5BJ,kBA4BI,MAAA,CAAA,WACE,iBAAA,QACA,MAAA,KAEA,CAhCN,kBAgCM,MAAA,CAJF,UAIE,OACE,iBAAA",
+  "names": []
+}

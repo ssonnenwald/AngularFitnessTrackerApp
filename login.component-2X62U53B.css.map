@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/login/login.component.scss"],
+  "sourcesContent": [".login-card {\r\n    width: 400px;\r\n    margin: 100px auto;\r\n    padding: 20px;\r\n    text-align: center;\r\n    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);\r\n    border-radius: 10px;\r\n}\r\n\r\n.full-width {\r\n    width: 100%;\r\n}\r\n\r\n.links {\r\n    margin-top: 15px;\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n\r\nmat-form-field {\r\n    margin-bottom: 15px;\r\n}"],
+  "mappings": "AAAA,CAAA,WACI,MAAA,MADJ,OAEI,MAAA,KAFJ,QAGI,KACA,WAAA,OACA,WAAA,EAAA,IAAA,KAAA,MALJ,cAMI,KAGJ,CAAA,WACI,MAAA,KAGJ,CAAA,MACI,WAAA,KACA,QAAA,KACA,gBAAA,cAGJ,eACI,cAAA",
+  "names": []
+}
