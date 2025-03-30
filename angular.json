@@ -121,7 +121,7 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "baseHref": "ssonnenwald.github.io/fitness-tracker/"
+            "baseHref": "ssonnenwald.github.io/AngularFitnessTrackerApp/"
           }
         }
       }
