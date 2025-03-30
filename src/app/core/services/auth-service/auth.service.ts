@@ -13,15 +13,20 @@ export class AuthService {
 
   public login(username: string, password: string): boolean {
     // Replace with API call
-    if (username === 'admin' && password === 'password') {
-      this.isAuthenticated = true;
+    // if (username === 'admin' && password === 'password') {
+    //   this.isAuthenticated = true;
 
-      localStorage.setItem('token', 'fake-jwt-token');
+    //   localStorage.setItem('token', 'fake-jwt-token');
 
-      return true;
-    }
+    //   return true;
+    // }
 
-    return false;
+    // return false;
+    this.isAuthenticated = true;
+
+    localStorage.setItem('token', 'fake-jwt-token');
+
+    return true;
   }
 
   public logout(): void {
